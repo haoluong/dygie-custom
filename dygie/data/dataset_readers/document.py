@@ -311,8 +311,10 @@ class Sentence:
 
         # Store relations.
         if "relations" in entry:
-            self.relations = [Relation(this_relation, self) for
-                              this_relation in entry["relations"]]
+            for this_relation in entry["relations"]:
+                rel = Relation(this_relation, self)
+                if rel.pair[0].span_sent[0] >= 0:
+                    self.relations.append(rel)
             relation_dict = {}
             for rel in self.relations:
                 key = (rel.pair[0].span_sent, rel.pair[1].span_sent)
