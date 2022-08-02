@@ -309,6 +309,7 @@ class Sentence:
         else:
             self.predicted_ner = None
 
+        self.relations = []
         # Store relations.
         if "relations" in entry:
             for this_relation in entry["relations"]:
