@@ -124,6 +124,7 @@ class DyGIEReader(DatasetReader):
             spans.append(SpanField(start, end, text_field))
         span_field = ListField(spans)
         span_tuples = [(span.span_start, span.span_end) for span in spans]
+        print(sentence_text)
 
         # Convert data to fields.
         # NOTE: The `ner_labels` and `coref_labels` would ideally have type
@@ -186,6 +187,7 @@ class DyGIEReader(DatasetReader):
         Convert a Document object into an instance.
         """
         doc = Document.from_json(doc_text)
+        print(doc.doc_key)
 
         # Make sure there are no single-token sentences; these break things.
         sent_lengths = [len(x) for x in doc.sentences]
