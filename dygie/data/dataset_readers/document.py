@@ -294,9 +294,12 @@ class Sentence:
         self.metadata = {k: v for k, v in entry.items() if re.match("^_", k)}
 
         # Store events.
+        self.ner = []
         if "ner" in entry:
-            self.ner = [NER(this_ner, self)
-                        for this_ner in entry["ner"]]
+            for this_ner in entry["ner"]:
+                ner = NER(this_ner, self)
+                if ner.span.span_sent[0] >= 0:
+                    self.ner.append(ner)
             self.ner_dict = {entry.span.span_sent: entry.label for entry in self.ner}
         else:
             self.ner = None
@@ -311,7 +314,7 @@ class Sentence:
 
         self.relations = []
         # Store relations.
-        sentence_end = self.sentence_start + len(self.text) - 1
+        sentence_end = len(self.text) - 1
         if "relations" in entry:
             for this_relation in entry["relations"]:
                 rel = Relation(this_relation, self)
