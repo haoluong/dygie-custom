@@ -318,7 +318,8 @@ class Sentence:
         if "relations" in entry:
             for this_relation in entry["relations"]:
                 rel = Relation(this_relation, self)
-                if rel.pair[0].span_sent[0] >= 0 and rel.pair[1].span_sent[1] <= sentence_end:
+                if rel.pair[0].span_sent[0] >= 0 and rel.pair[0].span_sent[1] <= sentence_end \
+                        and rel.pair[1].span_sent[1] <= sentence_end and rel.pair[1].span_sent[0] >= 0:
                     self.relations.append(rel)
             relation_dict = {}
             for rel in self.relations:
