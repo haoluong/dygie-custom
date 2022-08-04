@@ -124,7 +124,6 @@ class DyGIEReader(DatasetReader):
             spans.append(SpanField(start, end, text_field))
         span_field = ListField(spans)
         span_tuples = [(span.span_start, span.span_end) for span in spans]
-        print(sentence_text)
 
         # Convert data to fields.
         # NOTE: The `ner_labels` and `coref_labels` would ideally have type
