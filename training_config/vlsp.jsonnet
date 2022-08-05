@@ -4,7 +4,7 @@ template.DyGIE {
   bert_model: "allenai/scibert_scivocab_cased",
   cuda_device: 0,
   data_paths: {
-    train: "data/vlsp/train.json",
+    train: "/content/drive/MyDrive/Master/Thesis/Dataset/train.json",
     validation: "data/vlsp/dev.json",
     test: "data/vlsp/train.json",
   },
