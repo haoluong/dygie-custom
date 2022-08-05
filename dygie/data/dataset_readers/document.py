@@ -88,7 +88,7 @@ class Dataset:
         to_write = [doc.to_json() for doc in self]
         with open(fname, "w") as f:
             for entry in to_write:
-                print(json.dumps(entry), file=f)
+                print(json.dumps(entry, ensure_ascii=False), file=f)
 
 
 class Document:
