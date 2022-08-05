@@ -6,7 +6,7 @@ template.DyGIE {
   data_paths: {
     train: "data/vlsp/train.json",
     validation: "data/vlsp/dev.json",
-    test: "data/vlsp/train.json",
+    test: "data/vlsp/test.json",
   },
   loss_weights: {
     ner: 0.2,
