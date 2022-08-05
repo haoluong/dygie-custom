@@ -4,7 +4,7 @@ template.DyGIE {
   bert_model: "roberta-base",
   cuda_device: 0,
   data_paths: {
-    train: "/content/drive/MyDrive/Master/Thesis/Dataset/train.json",
+    train: "data/vlsp/train.json",
     validation: "data/vlsp/dev.json",
     test: "data/vlsp/train.json",
   },
