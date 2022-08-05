@@ -4,9 +4,9 @@ template.DyGIE {
   bert_model: "roberta-base",
   cuda_device: 0,
   data_paths: {
-    train: "data/vlsp/train.json",
-    validation: "data/vlsp/dev.json",
-    test: "data/vlsp/test.json",
+    train: "data/vlsp/collated_data/json/train.json",
+    validation: "data/vlsp/collated_data/json/dev.json",
+    test: "data/vlsp/collated_data/json/test.json",
   },
   loss_weights: {
     ner: 0.2,
