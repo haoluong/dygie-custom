@@ -14,5 +14,12 @@ template.DyGIE {
     coref: 0.0,
     events: 0.0
   },
+  model +: {
+      feedforward_params +: {
+        num_layers+: 2,
+        hidden_dims+: 100,
+        dropout+: 0.4,
+      },
+  }
   target_task: "relation",
 }
