@@ -47,7 +47,7 @@ class DyGIEReader(DatasetReader):
         with open(file_path, "r") as f:
             lines = f.readlines()
 
-        for line in lines:
+        for line in lines[:350]:
             # Loop over the documents.
             doc_text = json.loads(line)
             instance = self.text_to_instance(doc_text)
