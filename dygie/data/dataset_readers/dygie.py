@@ -186,7 +186,6 @@ class DyGIEReader(DatasetReader):
         Convert a Document object into an instance.
         """
         doc = Document.from_json(doc_text)
-        print(doc.doc_key)
 
         # Make sure there are no single-token sentences; these break things.
         sent_lengths = [len(x) for x in doc.sentences]
