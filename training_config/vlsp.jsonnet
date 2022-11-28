@@ -1,7 +1,7 @@
 local template = import "template.libsonnet";
 
 template.DyGIE {
-  bert_model: "bert-base-cased",
+  bert_model: "vinai/phobert-base",
   cuda_device: 0,
   data_paths: {
     train: "data/vlsp/collated_data/json/train.json",
