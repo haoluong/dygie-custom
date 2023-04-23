@@ -10,7 +10,7 @@ template.DyGIE {
     'coref': '+coref_f1',
     'events': '+MEAN__arg_class_f1'
   },
-  bert_model: "roberta-base",
+  bert_model: "vinai/phobert-base",
   cuda_device: 0,
   data_paths: {
     train: "data/vlsp/collated_data/json/train.json",
