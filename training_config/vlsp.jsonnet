@@ -10,7 +10,7 @@ template.DyGIE {
     'coref': '+coref_f1',
     'events': '+MEAN__arg_class_f1'
   },
-  bert_model: "vinai/phobert-base",
+  bert_model: "bert-base-cased",
   cuda_device: 0,
   data_paths: {
     train: "data/vlsp/collated_data/json/train.json",
@@ -27,7 +27,7 @@ template.DyGIE {
     checkpointer: {
       num_serialized_models_to_keep: 3,
     },
-    num_epochs: 100,
+    num_epochs: 20,
     grad_norm: 5.0,
     cuda_device: dygie.cuda_device,
     validation_metric: validation_metrics[dygie.target_task],
