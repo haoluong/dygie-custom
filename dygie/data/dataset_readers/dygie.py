@@ -47,11 +47,6 @@ class DyGIEReader(DatasetReader):
         with open(file_path, "r") as f:
             lines = f.readlines()
 
-        if "dev" in file_path:
-            lines = lines[:300]
-        else:
-            lines = lines[:400]
-
         for line in lines:
             # Loop over the documents.
             doc_text = json.loads(line)
